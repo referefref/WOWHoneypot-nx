@@ -338,7 +338,7 @@ def config_load():
 
     # art directory Load
     if not os.path.exists(artpath) or not os.path.isdir(artpath):
-        logging_system("{0} directory load error.".format(arttpath), True, True)
+        logging_system("{0} directory load error.".format(artpath), True, True)
 
     defaultfile = os.path.join(artpath, "mrrules.xml")
     if not os.path.exists(defaultfile) or not os.path.isfile(defaultfile):
@@ -415,7 +415,7 @@ def config_load():
 
 
 if __name__ == '__main__':
-    random.seed(datetime.now())
+    random.seed()
 
     try:
         config_load()

@@ -1,3 +1,14 @@
+Adapted from https://github.com/morihisa/WOWHoneypot by Kazuaki Morihisa (@morihi_soc).
+
+**WOWHoneypot-nx** is WOWHoneypot 1.3 (upstream commit 0fd8179, June 2020) with the smallest changes needed to run on current Python 3 (3.11 and later). Responses, rules (art/), configuration and log formats are unchanged. Changes:
+
+- `random.seed(datetime.now())` raised `TypeError` on Python 3.11 and later (seeding from a datetime was removed), so WOWHoneypot no longer started; it now calls `random.seed()`, which seeds from the operating system's random source.
+- A misspelt variable name (`arttpath`) in the error message for a missing art directory, which raised `NameError` instead of printing the message.
+
+Tested on Debian 12 (Python 3.11.2) in October 2026. The original licence (BSD 3-Clause, LICENSE) and copyright notices are kept. The original README follows.
+
+---
+
 # WOWHoneypot: 初心者向け! 攻撃者をおもてなしする Web ハニーポット
 
 Welcome to Omotenashi Web Honeypot(WOWHoneypot)は、簡単に構築可能で、シンプルな機能で動作を把握しやすくした、サーバ側低対話型の入門用 Web ハニーポットです。
